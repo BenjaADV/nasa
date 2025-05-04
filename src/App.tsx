@@ -1,14 +1,13 @@
 
 import './App.css'
 import AppLayout from './components/layout/AppLayout';
-import { Button } from './components/ui/button'
+import { DashboardContent } from './components/layout/dashboard/DashboardContent';
 
 function App() {
 
   return (
     <AppLayout>
-      <Button >Toggle Dark Mode</Button>
-    
+      <DashboardContent />
     </AppLayout>
 
   );
