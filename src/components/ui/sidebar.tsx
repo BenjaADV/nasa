@@ -168,6 +168,7 @@ function Sidebar({
         {...props}
       >
         {children}
+        <SidebarTrigger className="absolute -right-4 top-4 z-50" />
       </div>
     );
   }
@@ -239,6 +240,7 @@ function Sidebar({
           className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
         >
           {children}
+          <SidebarTrigger className="absolute -right-4 top-4 z-50" />
         </div>
       </div>
     </div>
@@ -246,7 +248,7 @@ function Sidebar({
 }
 
 function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar, state } = useSidebar();
+  const { toggleSidebar, state, isMobile } = useSidebar();
 
   return (
     <Button
@@ -254,7 +256,12 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       data-slot="sidebar-trigger"
       variant="ghost"
       size="icon"
-      className={cn('size-10 rounded-full bg-[#F1E9FF] hover:bg-[#F1E9FF]/80 shadow-md hover:shadow-lg transition-shadow', className)}
+      className={cn(
+        'size-10 rounded-full bg-[#F1E9FF] hover:bg-[#F1E9FF]/80 shadow-md hover:shadow-lg transition-shadow',
+        // Ocultar en desktop cuando el sidebar está visible
+        !isMobile && 'hidden md:flex',
+        className
+      )}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
@@ -267,14 +274,15 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
         color="#9333ea" 
         className={cn(
           "!w-8 !h-8 transition-transform duration-200",
-          state === 'collapsed' ? 'rotate-180' : ''
+          state === 'collapsed' && !isMobile ? 'rotate-180' : '',
+          // Invertir flecha en mobile
+          isMobile && 'rotate-180'
         )}
       />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
 }
-
 function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
   const { toggleSidebar } = useSidebar();
 

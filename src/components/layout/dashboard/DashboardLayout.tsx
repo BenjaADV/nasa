@@ -11,7 +11,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col flex-1">
           <DashboardHeader />
 
-          <SidebarTrigger />
+          {/* Trigger para mobile */}
+          <div className="md:hidden fixed top-4 left-4 z-50">
+            <SidebarTrigger />
+          </div>
 
           <main className="flex-1 p-4">{children}</main>
         </div>
