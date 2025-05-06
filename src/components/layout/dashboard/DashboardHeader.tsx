@@ -10,7 +10,7 @@ import {
 
 export function DashboardHeader() {
   return (
-    <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4">
+    <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 shadow-md">
       <div className="flex items-center">
         <div className="mr-8"></div>
       </div>
