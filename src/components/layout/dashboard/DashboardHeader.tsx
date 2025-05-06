@@ -1,13 +1,23 @@
-import { Bell } from "lucide-react"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Bell } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 export function DashboardHeader() {
   return (
     <header className="h-16 border-b flex items-center justify-between px-4">
       <div className="flex items-center">
         <div className="mr-8">
-          <img src="/placeholder.svg?height=40&width=120" alt="NUCLEOELECTRICA ARGENTINA S.A." className="h-10" />
+          <img
+            src="/placeholder.svg?height=40&width=120"
+            alt="NUCLEOELECTRICA ARGENTINA S.A."
+            className="h-10"
+          />
         </div>
       </div>
       <div className="flex items-center gap-4">
@@ -29,5 +39,5 @@ export function DashboardHeader() {
         </Avatar>
       </div>
     </header>
-  )
+  );
 }

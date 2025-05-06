@@ -1,15 +1,9 @@
-
-import { DashboardLayout } from "./dashboard/DashboardLayout"
- 
+import { DashboardLayout } from './dashboard/DashboardLayout';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-    return (
-      <>
-      <DashboardLayout>
-        {children}
-      </DashboardLayout>
-      </>
-
-
-      )
+  return (
+    <>
+      <DashboardLayout>{children}</DashboardLayout>
+    </>
+  );
 }

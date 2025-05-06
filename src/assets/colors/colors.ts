@@ -1,0 +1,16 @@
+export const color = {
+  purple: '#7622FF',
+  black: '#000000',
+  white: '#FFFFFF',
+  grey: '#00000080',
+  light_grey: '#00000059',
+  dark_grey: '#525252',
+  input_grey: '#939393',
+  pink: '#BB6BD9',
+  icon_pink: '#BB6BD933',
+  background_grey: '#F1E9FF',
+  typography_green: '#136100',
+  typography_red: '#400000',
+  background_green: '#C5F3BD',
+  background_red: '#FFBDBD',
+};

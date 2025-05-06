@@ -1,12 +1,12 @@
-import { Home, Calendar, Package } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Home, Calendar, Package } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from '@/components/ui/breadcrumb';
 
 export function DashboardContent() {
   return (
@@ -87,5 +87,5 @@ export function DashboardContent() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
