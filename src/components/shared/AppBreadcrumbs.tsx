@@ -11,11 +11,13 @@ import {
 import React from 'react';
 
 const breadcrumbNameMap: Record<string, string> = {
-  dashboard: 'Inicio',
-  settings: 'Configuración',
-  profile: 'Perfil',
-  users: 'Usuarios',
-  create: 'Crear',
+  home: 'Inicio',
+  fuelElement: 'Elemento Combustible',
+  reactor: 'Reactor',
+  pools: 'Piletas',
+  machine: 'Maquina de Carga',
+  movements: 'Movimientos',
+  lists: 'Listados',
 };
 
 export function AppBreadcrumbs() {

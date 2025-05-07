@@ -1,16 +1,10 @@
-import { Home, Calendar, Package } from 'lucide-react';
+import { Calendar, Package } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { AppBreadcrumbs } from '@/components/shared/AppBreadcrumbs';
+import { ContentLayout } from '@/components/layout/ContentLayout';
 
 export default function Dashboard() {
   return (
-    <div className="flex-1 p-6 overflow-auto">
-      <div className="mb-6">
-        <AppBreadcrumbs />
-      </div>
-
-      <h1 className="text-3xl font-bold text-purple-600 mb-8">Inicio</h1>
-
+    <ContentLayout title="Inicio">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
           <CardContent className="p-6">
@@ -66,6 +60,6 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </ContentLayout>
   );
 }

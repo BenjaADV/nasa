@@ -2,6 +2,7 @@ import type React from 'react';
 import { DashboardHeader } from './DashboardHeader';
 import { AppSidebar } from '../AppSidebar';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { ContentLayout } from '../ContentLayout';
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             <SidebarTrigger />
           </div>
 
-          <main className="flex-1 p-4">{children}</main>
+          <ContentLayout>
+            {children}
+          </ContentLayout>
+        
         </div>
       </SidebarProvider>
     </>

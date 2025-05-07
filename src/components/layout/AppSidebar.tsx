@@ -15,32 +15,32 @@ const data = {
   navMain: [
     {
       title: 'Elemento Combustible',
-      url: '#',
+      url: '/fuelElement',
       icon: TrendingDown,
     },
     {
       title: 'Reactor',
-      url: '#',
+      url: '/reactor',
       icon: Building,
     },
     {
       title: 'Piletas',
-      url: '#',
+      url: '/pools',
       icon: ChartNoAxesColumnIncreasingIcon,
     },
     {
       title: 'Maquina de Carga',
-      url: '#',
+      url: '/machine',
       icon: TrendingUp,
     },
     {
       title: 'Movimientos',
-      url: '#',
+      url: '/movements',
       icon: House,
     },
     {
       title: 'Listados',
-      url: '#',
+      url: '/lists',
       icon: Calculator,
     },
     {

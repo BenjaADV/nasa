@@ -3,7 +3,13 @@ import { lazy } from 'react';
 import AppLayout from '@/components/layout/AppLayout';
 
 const Home = lazy(() => import('@/pages/home/Home'));
-const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const FuelElement = lazy(() => import('@/pages/fuelElement/FuelElement'));
+const Reactor = lazy(() => import('@/pages/reactor/Reactor'));
+const Pools = lazy(() => import('@/pages/pools/Pools'));
+const Machine = lazy(() => import('@/pages/machine/Machine'));
+const Movements = lazy(() => import('@/pages/movements/Movements'));
+const Lists = lazy(() => import('@/pages/lists/Lists'));
+
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +17,12 @@ export const router = createBrowserRouter([
 //    errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/dashboard', element: <Dashboard /> },
+      { path: '/fuelElement', element: <FuelElement /> },
+      { path: '/reactor', element: <Reactor /> },
+      { path: '/pools', element: <Pools /> },
+      { path: '/machine', element: <Machine /> },
+      { path: '/movements', element: <Movements /> },
+      { path: '/lists', element: <Lists /> },
     ],
   },
 ]);
