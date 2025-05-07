@@ -1,4 +1,3 @@
-import { AppBreadcrumbs } from "@/components/shared/AppBreadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Package } from "lucide-react";
 

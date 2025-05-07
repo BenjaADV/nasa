@@ -16,6 +16,7 @@ import {
 
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
 import { NavMain } from './NavMain';
+import { Link } from 'react-router-dom';
 
 const data = {
   navMain: [
@@ -61,11 +62,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <img
-          src="/src/assets/images/nucleoelectrica_logo.png"
-          alt="Logo"
-          className="h-8 m-8 w-auto object-contain"
-        />
+        <Link to="/home" className="flex justify-center items-center m-8">
+          <img
+            src="/src/assets/images/nucleoelectrica_logo.png"
+            alt="Logo"
+            className="h-8 w-auto object-contain"
+          />
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
