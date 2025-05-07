@@ -2,10 +2,16 @@ import {
   Building,
   Calculator,
   ChartNoAxesColumnIncreasingIcon,
+  ClipboardList,
+  Fuel,
   House,
+  MonitorUp,
+  SquareActivity,
   TrendingDown,
   TrendingUp,
   Users,
+  Waves,
+  Wrench,
 } from 'lucide-react';
 
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
@@ -16,7 +22,7 @@ const data = {
     {
       title: 'Elemento Combustible',
       url: '/fuelElement',
-      icon: TrendingDown,
+      icon: Fuel,
     },
     {
       title: 'Reactor',
@@ -26,27 +32,27 @@ const data = {
     {
       title: 'Piletas',
       url: '/pools',
-      icon: ChartNoAxesColumnIncreasingIcon,
+      icon: Waves,
     },
     {
       title: 'Maquina de Carga',
       url: '/machine',
-      icon: TrendingUp,
+      icon: MonitorUp,
     },
     {
       title: 'Movimientos',
       url: '/movements',
-      icon: House,
+      icon: SquareActivity,
     },
     {
       title: 'Listados',
       url: '/lists',
-      icon: Calculator,
+      icon: ClipboardList,
     },
     {
       title: 'Utilidades',
-      url: '#',
-      icon: Users,
+      url: '/utilities',
+      icon: Wrench,
     },
   ],
 };

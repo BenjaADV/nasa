@@ -30,7 +30,7 @@ export function NavMain({
                 <SidebarMenuButton
                   tooltip={item.title}
                   isActive={location.pathname === item.url}
-                  className="h-12 px-4 text-base w-full flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 [&:hover_*]:text-[#7622FF]"
+                  className="h-12 px-4 text-base w-full flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 [&:hover_*]:text-[#7622FF] data-[active=true]:bg-[#F1E9FF] data-[active=true]:text-[#7622FF]"
                 >
                   {item.icon && <item.icon className="h-6 w-6 transition-colors" />}
                   <span className="transition-colors">{item.title}</span>

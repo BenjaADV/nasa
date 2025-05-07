@@ -6,7 +6,7 @@ interface ContentLayoutProps {
   title?: string;
 }
 
-export function ContentLayout({ children, title }: ContentLayoutProps) {
+export function ContentLayout({ children }: ContentLayoutProps) {
   return (
     <div className="flex-1 p-6 overflow-auto">
       <div className="mb-6">
