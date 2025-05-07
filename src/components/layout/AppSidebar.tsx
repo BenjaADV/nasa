@@ -3,7 +3,6 @@ import {
   Calculator,
   ChartNoAxesColumnIncreasingIcon,
   House,
-  List,
   TrendingDown,
   TrendingUp,
   Users,
@@ -48,11 +47,6 @@ const data = {
       title: 'Utilidades',
       url: '#',
       icon: Users,
-    },
-    {
-      title: 'Ventana',
-      url: '#',
-      icon: List,
     },
   ],
 };
