@@ -1,9 +1,10 @@
+import { Outlet } from 'react-router-dom';
 import { DashboardLayout } from './dashboard/DashboardLayout';
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout() {
   return (
-    <>
-      <DashboardLayout>{children}</DashboardLayout>
-    </>
+    <DashboardLayout>
+      <Outlet />
+    </DashboardLayout>
   );
 }
