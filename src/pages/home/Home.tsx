@@ -1,9 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, Package } from "lucide-react";
+import { Card, CardContent } from '@/components/ui/card';
+import { Calendar, Package } from 'lucide-react';
 
 export default function Home() {
   return (
-    <> 
+    <>
       <h1 className="text-3xl font-bold text-purple-600 mb-8">Inicio</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -61,6 +61,6 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
-      </>
+    </>
   );
 }
