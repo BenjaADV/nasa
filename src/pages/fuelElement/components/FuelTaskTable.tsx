@@ -13,7 +13,7 @@ export default function FuelTaskTable() {
 
   return (
     <>
-      <div className="flex flex-col overflow-hidden w-full h-full">
+      <div className="flex ">
         <DataTable data={tasks} columns={columns} />
       </div>
     </>

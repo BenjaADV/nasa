@@ -1,28 +1,34 @@
+import { Row } from '@tanstack/react-table';
+import { MoreHorizontal } from 'lucide-react';
 
-import { Row } from "@tanstack/react-table"
-import { MoreHorizontal } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuRadioItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DropdownMenuShortcut } from "@/components/ui/dropdown-menu"
-import { labels } from "./data/data"
-import { taskSchema } from "./data/schema"
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuRadioItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+  DropdownMenuShortcut,
+} from '@/components/ui/dropdown-menu';
+import { labels } from './data/data';
+import { taskSchema } from './data/schema';
 
 interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+  row: Row<TData>;
 }
 
-export function DataTableRowActions<TData>({
-  row,
-}: DataTableRowActionsProps<TData>) {
-  const task = taskSchema.parse(row.original)
+export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TData>) {
+  const task = taskSchema.parse(row.original);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
-        >
+        <Button variant="ghost" className="flex h-8 w-8 p-0 data-[state=open]:bg-muted">
           <MoreHorizontal />
           <span className="sr-only">Open menu</span>
         </Button>
@@ -35,7 +41,7 @@ export function DataTableRowActions<TData>({
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={task.label}>
+            <DropdownMenuRadioGroup value={task.code}>
               {labels.map((label) => (
                 <DropdownMenuRadioItem key={label.value} value={label.value}>
                   {label.label}
@@ -51,5 +57,5 @@ export function DataTableRowActions<TData>({
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

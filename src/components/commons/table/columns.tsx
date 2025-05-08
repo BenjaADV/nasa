@@ -1,29 +1,26 @@
 import { ColumnDef } from '@tanstack/react-table';
 
 import { DataTableColumnHeader } from './data-table-column-header';
-import { DataTableRowActions } from './data-table-row-actions';
-import { Badge } from '@/components/ui/badge';
-import { labels, priorities, statuses } from './data/data';
+
+import { priorities, statuses } from './data/data';
 import { Task } from './data/schema';
 
 export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'id',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Task" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="EC" />,
     cell: ({ row }) => <div className="w-[80px]">{row.getValue('id')}</div>,
-    enableSorting: false,
     enableHiding: false,
   },
   {
-    accessorKey: 'title',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Title" />,
+    accessorKey: 'code',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Código" />,
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label);
+      const code = row.getValue('code') as string;
 
       return (
         <div className="flex space-x-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">{row.getValue('title')}</span>
+          <span className="max-w-[500px] truncate font-medium">{code}</span>
         </div>
       );
     },
@@ -32,16 +29,11 @@ export const columns: ColumnDef<Task>[] = [
     accessorKey: 'status',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
     cell: ({ row }) => {
-      const status = statuses.find((status) => status.value === row.getValue('status'));
-
-      if (!status) {
-        return null;
-      }
+      const status = row.getValue('status') as string;
 
       return (
         <div className="flex w-[100px] items-center">
-          {status.icon && <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-          <span>{status.label}</span>
+          <span>{status}</span>
         </div>
       );
     },
@@ -69,9 +61,5 @@ export const columns: ColumnDef<Task>[] = [
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id));
     },
-  },
-  {
-    id: 'actions',
-    cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ];

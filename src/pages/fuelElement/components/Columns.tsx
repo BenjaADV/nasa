@@ -48,6 +48,7 @@ export const columns: ColumnDef<FuelElement>[] = [
     },
     sortingFn: 'alphanumeric',
   },
+  
   {
     accessorKey: 'pileta',
     header: ({ column }) => {

@@ -24,6 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -59,44 +60,47 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
       <DataTableToolbar table={table} />
       <div className="rounded-md border w-full">
         <Table className="w-full table-fixed">
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      className="whitespace-nowrap"
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(header.column.columnDef.header, header.getContext())}
-                    </TableHead>
-                  );
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id}>
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="truncate">
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
-                  ))}
+          <ScrollArea className="w-full whitespace-nowrap">
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        className="whitespace-nowrap"
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(header.column.columnDef.header, header.getContext())}
+                      </TableHead>
+                    );
+                  })}
                 </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow key={row.id}>
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id} className="truncate">
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+            <ScrollBar orientation="horizontal" className="bg-blend-color" />
+          </ScrollArea>
         </Table>
       </div>
       <DataTablePagination table={table} />

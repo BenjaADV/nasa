@@ -1,44 +1,39 @@
-import { Table } from "@tanstack/react-table"
-import { X } from "lucide-react"
+import { Table } from '@tanstack/react-table';
+import { X } from 'lucide-react';
 
-
-import { DataTableFacetedFilter } from "./data-table-faceted-filter"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { DataTableViewOptions } from "./data-table-view-options"
-import { priorities } from "./data/data"
-import { statuses } from "./data/data"
+import { DataTableFacetedFilter } from './data-table-faceted-filter';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { DataTableViewOptions } from './data-table-view-options';
+import { priorities } from './data/data';
+import { statuses } from './data/data';
 
 interface DataTableToolbarProps<TData> {
-  table: Table<TData>
+  table: Table<TData>;
 }
 
-export function DataTableToolbar<TData>({
-  table,
-}: DataTableToolbarProps<TData>) {
-  const isFiltered = table.getState().columnFilters.length > 0
+export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>) {
+  const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter tasks..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
-          }
+          placeholder="Filtrar por ID..."
+          value={(table.getColumn('id')?.getFilterValue() as string) ?? ''}
+          onChange={(event) => table.getColumn('id')?.setFilterValue(event.target.value)}
           className="h-8 w-[150px] lg:w-[250px]"
         />
-        {table.getColumn("status") && (
+        {table.getColumn('status') && (
           <DataTableFacetedFilter
-            column={table.getColumn("status")}
+            column={table.getColumn('status')}
             title="Status"
             options={statuses}
           />
         )}
-        {table.getColumn("priority") && (
+        {table.getColumn('priority') && (
           <DataTableFacetedFilter
-            column={table.getColumn("priority")}
+            column={table.getColumn('priority')}
             title="Priority"
             options={priorities}
           />
@@ -56,5 +51,5 @@ export function DataTableToolbar<TData>({
       </div>
       <DataTableViewOptions table={table} />
     </div>
-  )
+  );
 }
