@@ -1,5 +1,4 @@
 import { FuelElementHeader } from './components/FuelElementHeader';
-import FuelElementTable from './components/FuelElementTable';
 import FuelTaskTable from './components/FuelTaskTable';
 
 const FuelElement = () => {

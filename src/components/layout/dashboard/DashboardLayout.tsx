@@ -1,7 +1,7 @@
 import type React from 'react';
 import { DashboardHeader } from './DashboardHeader';
 import { AppSidebar } from '../AppSidebar';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { ContentLayout } from '../ContentLayout';
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -9,7 +9,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <div className="flex flex-col flex-1">
+        <SidebarInset className="overflow-hidden md:!m-0">
           <DashboardHeader />
 
           {/* Trigger para mobile */}
@@ -17,11 +17,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             <SidebarTrigger />
           </div>
 
-          <ContentLayout>
-            {children}
-          </ContentLayout>
-        
-        </div>
+          <ContentLayout>{children}</ContentLayout>
+        </SidebarInset>
       </SidebarProvider>
     </>
   );
