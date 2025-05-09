@@ -30,13 +30,23 @@ import { Calendar } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { DataTableFeatureFilter } from './data-table-feature-filter';
+import { DatePickerWithRange } from '@/components/shared/dateTimePicker/DatePickerWithRange';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  features?: {
+    value: string;
+    label: string;
+  }[];
 }
 
-export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({
+  columns,
+  data,
+  features = [],
+}: DataTableProps<TData, TValue>) {
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -62,7 +72,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
 
   return (
     <div className="space-y-4 bg-white p-4 rounded-md">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <div className="relative w-80">
           <Input
             placeholder="Buscar EC"
@@ -74,15 +84,8 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="relative">
-            <Input placeholder="05/2022 - 11/2022" className="pr-9 w-56 border-gray-300" />
-            <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-          </div>
-
-          <Button variant="outline" className="border-gray-300 gap-2">
-            <span>Filtro por Característica</span>
-            <Filter className="h-4 w-4" />
-          </Button>
+          <DatePickerWithRange className="w-[300px] [&>div>button]:w-56 [&>div>button]:border-gray-300 [&>div>button]:pr-9 [&>div>button]:justify-start" />
+          <DataTableFeatureFilter table={table} features={features} />
         </div>
       </div>
       <div className="space-y-4 w-full">
