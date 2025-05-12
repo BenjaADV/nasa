@@ -18,6 +18,7 @@ const breadcrumbNameMap: Record<string, string> = {
   machine: 'Maquina de Carga',
   movements: 'Movimientos',
   lists: 'Listados',
+  utilities: 'Utilidades',
 };
 
 export function AppBreadcrumbs() {
