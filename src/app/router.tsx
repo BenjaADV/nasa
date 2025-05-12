@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { lazy } from 'react';
 import AppLayout from '@/components/layout/AppLayout';
+import LoginPage from '@/pages/auth/Login';
 
 const Home = lazy(() => import('@/pages/home/Home'));
 const FuelElement = lazy(() => import('@/pages/fuelElement/FuelElement'));
@@ -13,8 +14,12 @@ const Utilities = lazy(() => import('@/pages/utilities/Utilities'));
 
 export const router = createBrowserRouter([
   {
+    element: <LoginPage />,
+    children: [{ path: '/login', element: <LoginPage /> }],
+  },
+  {
     element: <AppLayout />,
-//    errorElement: <ErrorPage />,
+    //    errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },
       { path: '/home', element: <Home /> },

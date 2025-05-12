@@ -1,5 +1,3 @@
-'use client';
-import { useState } from 'react';
 import { toast } from 'sonner';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
