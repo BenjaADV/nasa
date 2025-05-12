@@ -1,8 +1,8 @@
-
+import StandardForm from '@/components/shared/form/StandardForm';
 const Utilities = () => {
   return (
     <div>
-      
+      <StandardForm />
     </div>
   )
 }
