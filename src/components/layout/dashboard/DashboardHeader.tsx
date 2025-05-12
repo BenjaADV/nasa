@@ -20,9 +20,9 @@ export function DashboardHeader() {
             <SelectValue placeholder="Nombre del proyecto" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="proyecto1">Nombre del proyecto</SelectItem>
-            <SelectItem value="proyecto2">Proyecto 2</SelectItem>
-            <SelectItem value="proyecto3">Proyecto 3</SelectItem>
+            <SelectItem value="proyecto1">CNA I</SelectItem>
+            <SelectItem value="proyecto2">CNA II</SelectItem>
+            <SelectItem value="proyecto3">Embalse</SelectItem>
           </SelectContent>
         </Select>
         <button className="p-2 relative">

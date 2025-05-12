@@ -30,7 +30,7 @@ const LoginPage = () => {
       password: '',
     },
     resolver: zodResolver(formSchema),
-  });
+  }); 
 
   const navigate = useNavigate();
 
