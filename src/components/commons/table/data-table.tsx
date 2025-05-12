@@ -115,9 +115,9 @@ export function DataTable<TData, TValue>({
                 <TableBody>
                   {table.getRowModel().rows?.length ? (
                     table.getRowModel().rows.map((row) => (
-                      <TableRow key={row.id}>
+                      <TableRow key={row.id} className="h-12 border-b border-gray-200 border-l-4 border-l-transparent hover:border-l-[#7622FF] transition-colors">
                         {row.getVisibleCells().map((cell) => (
-                          <TableCell key={cell.id} className="truncate">
+                          <TableCell key={cell.id} className="truncate ">
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </TableCell>
                         ))}
@@ -126,7 +126,7 @@ export function DataTable<TData, TValue>({
                   ) : (
                     <TableRow>
                       <TableCell colSpan={columns.length} className="h-24 text-center">
-                        No results.
+                        Sin resultados.
                       </TableCell>
                     </TableRow>
                   )}
