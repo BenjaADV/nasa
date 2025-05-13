@@ -15,7 +15,7 @@ import { TextAreaInput } from '@/components/shared/form/inputs/TextAreaInput';
 const items = [
   { id: '1', label: 'EC con registro de interacciones mecánicas' },
   { id: '2', label: 'EC con manchas superficiales' },
-  { id: '3', label: 'EC con descarga de peso en Maquina de Carga' },
+  { id: '3', label: 'EC con descarga de peso en Máquina de Carga' },
   { id: '4', label: 'EC con indicaciones de actividades' },
   { id: '5', label: 'EC con debns' },
 ];
@@ -181,7 +181,7 @@ export default function Utilities() {
             <TextAreaInput
               control={methods.control}
               name="observers"
-              label="Observadores"
+              label="Observaciones"
               placeholder="Escriba alguna observación"
               rows={3}
             />

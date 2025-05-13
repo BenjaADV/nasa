@@ -115,7 +115,10 @@ export function DataTable<TData, TValue>({
                 <TableBody>
                   {table.getRowModel().rows?.length ? (
                     table.getRowModel().rows.map((row) => (
-                      <TableRow key={row.id} className="h-12 border-b border-gray-200 border-l-4 border-l-transparent hover:border-l-[#7622FF] transition-colors">
+                      <TableRow
+                        key={row.id}
+                        className="h-12 border-b border-gray-200 border-l-4 border-l-transparent hover:border-l-[#7622FF] transition-colors"
+                      >
                         {row.getVisibleCells().map((cell) => (
                           <TableCell key={cell.id} className="truncate ">
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}

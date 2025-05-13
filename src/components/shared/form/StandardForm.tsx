@@ -391,7 +391,7 @@ export default function MyForm() {
             name="observers"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Observadores</FormLabel>
+                <FormLabel>Observaciones</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Escriba alguna observación"

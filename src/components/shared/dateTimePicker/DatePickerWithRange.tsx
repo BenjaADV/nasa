@@ -31,10 +31,10 @@ export function DatePickerWithRange({ className }: React.HTMLAttributes<HTMLDivE
             {date?.from ? (
               date.to ? (
                 <>
-                  {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
+                  {format(date.from, 'dd/MM/yyyy')} - {format(date.to, 'dd/MM/yyyy')}
                 </>
               ) : (
-                format(date.from, 'LLL dd, y')
+                format(date.from, 'dd/MM/yyyy')
               )
             ) : (
               <span>05/2022 - 11/2022</span>
