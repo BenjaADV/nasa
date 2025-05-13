@@ -1,8 +1,8 @@
 import type React from 'react';
-import { DashboardHeader } from './DashboardHeader';
-import { AppSidebar } from '../AppSidebar';
+import { DashboardHeader } from '../header/DashboardHeader';
+import { AppSidebar } from '../sidebar/AppSidebar';
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
-import { ContentLayout } from '../ContentLayout';
+import { ContentLayout } from './ContentLayout';
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (

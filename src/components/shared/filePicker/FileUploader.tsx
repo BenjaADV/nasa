@@ -49,9 +49,9 @@ export function FileUploader() {
     const newFiles: FileItem[] = Array.from(selectedFiles)
       .map((file) => {
         if (
-          !file.type.includes('pdf') &&
           !file.type.includes('excel') &&
-          !file.type.includes('spreadsheetml')
+          !file.type.includes('spreadsheetml') &&
+          !file.name.endsWith('.csv')
         ) {
           alert('Solo se permiten archivos PDF o Excel');
           return null;
@@ -124,9 +124,9 @@ export function FileUploader() {
     const newFiles: FileItem[] = Array.from(droppedFiles)
       .filter(
         (file) =>
-          file.type.includes('pdf') ||
           file.type.includes('excel') ||
-          file.type.includes('spreadsheetml')
+          file.type.includes('spreadsheetml') ||
+          file.name.endsWith('.csv')
       )
       .map((file) => ({
         id: crypto.randomUUID(),
@@ -139,7 +139,7 @@ export function FileUploader() {
       }));
 
     if (newFiles.length === 0) {
-      alert('Solo se permiten archivos PDF o Excel');
+      alert('Solo se permiten archivos Excel (.xls, .xlsx, .csv)');
       return;
     }
 
@@ -173,13 +173,13 @@ export function FileUploader() {
       >
         <CloudUpload className="h-6 w-6 text-gray-800 mb-4" />
         <h3 className="text-base font-medium text-gray-800">Elige un archivo o arrástralo aquí</h3>
-        <p className="text-sm text-gray-400 mb-4">Formato PDF o Excel</p>
+        <p className="text-sm text-gray-400 mb-4">Formato Excel</p>
         <input
           type="file"
           ref={fileInputRef}
           onChange={handleFileChange}
           className="hidden"
-          accept=".pdf,.xls,.xlsx,.csv"
+          accept=".xls,.xlsx,.csv"
           multiple
         />
         <Button

@@ -1,6 +1,6 @@
 import { Calendar, Package } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { ContentLayout } from '@/components/layout/ContentLayout';
+import { ContentLayout } from '@/components/layout/dashboard/ContentLayout';
 
 export default function Dashboard() {
   return (
