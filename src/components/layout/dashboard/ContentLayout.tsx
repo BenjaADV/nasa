@@ -8,7 +8,7 @@ interface ContentLayoutProps {
 
 export function ContentLayout({ children }: ContentLayoutProps) {
   return (
-    <div className="flex-1 flex flex-col mx-auto p-6 w-full">
+    <div className="container flex-1 flex flex-col mx-auto p-8 w-full">
       <div className="mb-6">
         <AppBreadcrumbs />
       </div>
