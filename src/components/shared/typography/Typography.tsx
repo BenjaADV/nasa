@@ -12,7 +12,7 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
     | 'lead'
     | 'muted'
     | 'small'
-    | 'highlighted'; // Nueva variante
+    | 'highlighted';
 };
 
 const variantClasses = {
@@ -25,7 +25,7 @@ const variantClasses = {
   lead: 'text-xl text-muted-foreground',
   muted: 'text-sm text-muted-foreground',
   small: 'text-sm font-medium leading-none',
-  highlighted: 'font-public-sans text-sm font-medium leading-[100%] text-[#7622FF]', // Nueva clase
+  highlighted: 'font-public-sans text-sm leading-[100%] text-[#7622FF]',
 };
 
 export function Typography({ variant = 'p', className, children, ...props }: TypographyProps) {
