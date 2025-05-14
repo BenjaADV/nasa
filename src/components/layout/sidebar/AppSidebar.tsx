@@ -11,42 +11,43 @@ import {
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
 import { NavMain } from './NavMain';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '@/constants/routes';
 
 const data = {
   navMain: [
     {
       title: 'Elemento Combustible',
-      url: '/fuelElement',
+      url: ROUTES.FUEL_ELEMENT,
       icon: Fuel,
     },
     {
       title: 'Reactor',
-      url: '/reactor',
+      url: ROUTES.REACTOR,
       icon: Building,
     },
     {
       title: 'Piletas',
-      url: '/pools',
+      url: ROUTES.POOLS,
       icon: Waves,
     },
     {
       title: 'Maquina de Carga',
-      url: '/machine',
+      url: ROUTES.MACHINE,
       icon: MonitorUp,
     },
     {
       title: 'Movimientos',
-      url: '/movements',
+      url: ROUTES.MOVEMENTS,
       icon: SquareActivity,
     },
     {
       title: 'Listados',
-      url: '/lists',
+      url: ROUTES.LISTS,
       icon: ClipboardList,
     },
     {
       title: 'Utilidades',
-      url: '/utilities',
+      url: ROUTES.UTILITIES,
       icon: Wrench,
     },
   ],
