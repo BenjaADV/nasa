@@ -31,14 +31,17 @@ export function AppBreadcrumbs() {
     <Breadcrumb>
       <BreadcrumbList>
         {/* Elemento Inicio fijo */}
-        <BreadcrumbItem>
+         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link to="/" className="flex items-center">
               <Home className="h-4 w-4 mr-2" />
-              <span className="text-gray-600">Inicio</span>
+
+              { !pathnames.find(e => {
+          return e === ROUTES.HOME;
+        }) && <span className="text-gray-600">Inicio</span> }
             </Link>
           </BreadcrumbLink>
-        </BreadcrumbItem>
+        </BreadcrumbItem> 
 
         {/* Resto de las rutas */}
         {pathnames.map((value, index) => {

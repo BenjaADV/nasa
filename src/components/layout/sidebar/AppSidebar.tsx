@@ -6,6 +6,7 @@ import {
   SquareActivity,
   Waves,
   Wrench,
+  House,
 } from 'lucide-react';
 
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
@@ -15,6 +16,11 @@ import { ROUTES } from '@/constants/routes';
 
 const data = {
   navMain: [
+    {
+      title: 'Inicio',
+      url: ROUTES.HOME,
+      icon: House,
+    },
     {
       title: 'Elemento Combustible',
       url: ROUTES.FUEL_ELEMENT,
