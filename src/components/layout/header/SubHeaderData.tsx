@@ -10,7 +10,7 @@ interface SubHeaderData {
 
 export function SubHeaderDataFetcher() {
   const [data, setData] = useState<SubHeaderData | null>(null);
-  const location = useLocation(); // Obtén la ubicación actual
+  const location = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +31,6 @@ export function SubHeaderDataFetcher() {
     fetchData();
   }, []);
 
-  console.log(location.pathname);
   if (location.pathname === '/' || location.pathname === '/home') {
     return null;
   }

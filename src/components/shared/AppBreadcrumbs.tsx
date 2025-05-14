@@ -9,16 +9,18 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import React from 'react';
+import { ROUTES } from '@/constants/routes';
 
 const breadcrumbNameMap: Record<string, string> = {
-  home: 'Inicio',
-  fuelElement: 'Elemento Combustible',
-  reactor: 'Reactor',
-  pools: 'Piletas',
-  machine: 'Maquina de Carga',
-  movements: 'Movimientos',
-  lists: 'Listados',
-  utilities: 'Utilidades',
+  [ROUTES.HOME]: 'Inicio',
+  [ROUTES.FUEL_ELEMENT]: 'Elemento Combustible',
+  [ROUTES.FUEL_ELEMENT_MASSIVE_CHARGE]: 'Carga Masiva de Elementos',
+  [ROUTES.REACTOR]: 'Reactor',
+  [ROUTES.POOLS]: 'Piletas',
+  [ROUTES.MACHINE]: 'Maquina de Carga',
+  [ROUTES.MOVEMENTS]: 'Movimientos',
+  [ROUTES.LISTS]: 'Listados',
+  [ROUTES.UTILITIES]: 'Utilidades',
 };
 
 export function AppBreadcrumbs() {
@@ -28,16 +30,19 @@ export function AppBreadcrumbs() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
+        {/* Elemento Inicio fijo */}
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link to="/">
+            <Link to="/" className="flex items-center">
               <Home className="h-4 w-4 mr-2" />
+              <span className="text-gray-600">Inicio</span>
             </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
+        {/* Resto de las rutas */}
         {pathnames.map((value, index) => {
-          const to = '/' + pathnames.slice(0, index + 1).join('/');
+          const to = `/${pathnames.slice(0, index + 1).join('/')}`;
           const isLast = index === pathnames.length - 1;
           const label = breadcrumbNameMap[value] || value;
 
@@ -49,7 +54,7 @@ export function AppBreadcrumbs() {
                   <span className="text-purple-600">{label}</span>
                 ) : (
                   <BreadcrumbLink asChild>
-                    <Link to={to} className="text-purple-600">
+                    <Link to={to} className="text-gray-600">
                       {label}
                     </Link>
                   </BreadcrumbLink>

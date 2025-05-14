@@ -3,6 +3,7 @@ import { lazy } from 'react';
 import AppLayout from '@/components/layout/AppLayout';
 import LoginPage from '@/pages/auth/Login';
 import { ROUTES } from '@/constants/routes';
+import FuelElementMassiveCharge from '@/pages/fuelElement/FuelElementMassiveCharge';
 
 const Home = lazy(() => import('@/pages/home/Home'));
 const FuelElement = lazy(() => import('@/pages/fuelElement/FuelElement'));
@@ -23,14 +24,21 @@ export const router = createBrowserRouter([
     //    errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },
-      { path: ROUTES.HOME, element: <Home /> },
-      { path: ROUTES.FUEL_ELEMENT, element: <FuelElement /> },
-      { path: ROUTES.REACTOR, element: <Reactor /> },
-      { path: ROUTES.POOLS, element: <Pools /> },
-      { path: ROUTES.MACHINE, element: <Machine /> },
-      { path: ROUTES.MOVEMENTS, element: <Movements /> },
-      { path: ROUTES.LISTS, element: <Lists /> },
-      { path: ROUTES.UTILITIES, element: <Utilities /> },
+      { path: `/${ROUTES.HOME}`, element: <Home /> },
+      {
+        path: `/${ROUTES.FUEL_ELEMENT}`,
+        element: <FuelElement />,
+      },
+      {
+        path: `/${ROUTES.FUEL_ELEMENT}/${ROUTES.FUEL_ELEMENT_MASSIVE_CHARGE}`,
+        element: <FuelElementMassiveCharge />,
+      },
+      { path: `/${ROUTES.REACTOR}`, element: <Reactor /> },
+      { path: `/${ROUTES.POOLS}`, element: <Pools /> },
+      { path: `/${ROUTES.MACHINE}`, element: <Machine /> },
+      { path: `/${ROUTES.MOVEMENTS}`, element: <Movements /> },
+      { path: `/${ROUTES.LISTS}`, element: <Lists /> },
+      { path: `/${ROUTES.UTILITIES}`, element: <Utilities /> },
     ],
   },
 ]);
