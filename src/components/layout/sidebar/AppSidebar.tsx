@@ -1,21 +1,15 @@
 import {
   Building,
-  Calculator,
-  ChartNoAxesColumnIncreasingIcon,
   ClipboardList,
   Fuel,
-  House,
   MonitorUp,
   SquareActivity,
-  TrendingDown,
-  TrendingUp,
-  Users,
   Waves,
   Wrench,
 } from 'lucide-react';
 
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
-import { NavMain } from '../NavMain';
+import { NavMain } from './NavMain';
 import { Link } from 'react-router-dom';
 
 const data = {
