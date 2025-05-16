@@ -22,7 +22,7 @@ export function FileUploader() {
   const [files, setFiles] = useState<FileItem[]>([
     {
       id: '1',
-      name: 'Elemento-combustible-2025.pdf',
+      name: 'Elemento-combustible-2025.csv',
       size: 60,
       totalSize: 120,
       type: 'application/pdf',
@@ -31,7 +31,7 @@ export function FileUploader() {
     },
     {
       id: '2',
-      name: 'Elemento-combustible-2024.pdf',
+      name: 'Elemento-combustible-2024.csv',
       size: 94,
       totalSize: 94,
       type: 'application/pdf',
@@ -199,24 +199,20 @@ export function FileUploader() {
               key={file.id}
               className="bg-white rounded-lg border border-gray-200 p-4 flex items-start"
             >
-              <div className="h-10 w-10 bg-red-100 rounded-md flex items-center justify-center mr-3 flex-shrink-0">
-                <div className="text-xs font-bold text-red-600">PDF</div>
+              <div className="h-10 w-10 bg-green-100 rounded-md flex items-center justify-center mr-3 flex-shrink-0">
+                <div className="text-xs font-bold text-green-600">CSV</div>
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex justify-between items-start">
                   <div className="font-medium text-gray-800 leading-[100%] tracking-[0%] truncate">
                     {file.name}
                   </div>
-                  {file.status === 'complete' ? (
+                  {file.status === 'complete' && (
                     <button
                       onClick={() => handleDeleteFile(file.id)}
                       className="text-gray-400 hover:text-gray-600 ml-2"
                     >
                       <Trash2 className="h-5 w-5" />
-                    </button>
-                  ) : (
-                    <button className="teCircleXt-gray-400 ml-2">
-                      <CircleX className="h-5 w-5" />
                     </button>
                   )}
                 </div>

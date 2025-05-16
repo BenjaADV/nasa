@@ -40,7 +40,7 @@ export function SubHeaderDataFetcher() {
   }
 
   return (
-    <div className="w-full h-10 bg-gray-300 px-10 flex items-center justify-between">
+    <div className="w-full h-10 bg-gray-300 px-10 gap-5 flex items-center justify-between">
       <Typography variant="highlighted">
         {data.value1} -Último movimiento procesado DPP - {data.value1}
       </Typography>
